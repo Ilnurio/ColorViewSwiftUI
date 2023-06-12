@@ -22,7 +22,7 @@ struct ContentView: View {
                     green: greenComponent,
                     blue: blueComponent
                 )
-                .padding(.bottom, 300)
+                .padding(EdgeInsets(top: 20, leading: 16, bottom: 300, trailing: 16))
                 ColorSliderView(value: $redComponent)
                 ColorSliderView(value: $greenComponent)
                 ColorSliderView(value: $blueComponent)
