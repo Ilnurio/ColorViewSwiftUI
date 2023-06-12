@@ -23,9 +23,9 @@ struct ContentView: View {
                     blue: blueComponent
                 )
                 .padding(EdgeInsets(top: 20, leading: 16, bottom: 300, trailing: 16))
-                ColorSliderView(value: $redComponent)
-                ColorSliderView(value: $greenComponent)
-                ColorSliderView(value: $blueComponent)
+                ColorSliderView(value: $redComponent, accentColor: .red)
+                ColorSliderView(value: $greenComponent, accentColor: .green)
+                ColorSliderView(value: $blueComponent, accentColor: .blue)
             }
         }
     }
@@ -39,12 +39,14 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ColorSliderView: View {
     @Binding var value: Double
+    let accentColor: Color
     
     var body: some View {
         HStack {
             Text("\(lround(value))")
                 .font(.system(size: 20))
             Slider(value: $value, in: 0...255, step: 1)
+                .accentColor(accentColor)
         }
         .padding()
     }
