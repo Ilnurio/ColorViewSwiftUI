@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var greenComponent = 0.5
     @State private var blueComponent = 0.5
     
-    
     var body: some View {
         ZStack {
             Color.purple
