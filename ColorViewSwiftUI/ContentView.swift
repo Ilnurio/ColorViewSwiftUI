@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var redComponent = 0.5
-    @State private var greenComponent = 0.5
+    @State private var redComponent = 0.3
+    @State private var greenComponent = 0.4
     @State private var blueComponent = 0.5
     
     var body: some View {
         ZStack {
             Color.purple
                 .ignoresSafeArea()
-            VStack {
+            VStack(alignment: .center, spacing: 20) {
                 Color(
                     red: redComponent,
                     green: greenComponent,
                     blue: blueComponent
-                )
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 300, trailing: 16))
-                ColorSliderView(value: $redComponent, accentColor: .red)
-                ColorSliderView(value: $greenComponent, accentColor: .green)
-                ColorSliderView(value: $blueComponent, accentColor: .blue)
+                ).padding()
+                ColorSliderView(value: $redComponent, tint: .red)
+                ColorSliderView(value: $greenComponent, tint: .green)
+                ColorSliderView(value: $blueComponent, tint: .blue)
             }
+            .padding()
         }
     }
 }
@@ -39,15 +39,14 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ColorSliderView: View {
     @Binding var value: Double
-    let accentColor: Color
+    let tint: Color
     
     var body: some View {
         HStack {
             Text("\(lround(value))")
                 .font(.system(size: 20))
-            Slider(value: $value, in: 0...255, step: 1)
-                .accentColor(accentColor)
+            Slider(value: $value, in: 0...255, step: 1.0)
+                .tint(tint)
         }
-        .padding()
     }
 }
