@@ -8,23 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var redComponent = 0.3
-    @State private var greenComponent = 0.4
-    @State private var blueComponent = 0.5
+    @State private var redComponent = 20.0
+    @State private var greenComponent = 40.0
+    @State private var blueComponent = 60.0
+    
+    @State private var redText = "20"
+    @State private var greenText = "40"
+    @State private var blueText = "60"
+    
+    let valueRange: ClosedRange<Double> = 0...255
     
     var body: some View {
         ZStack {
             Color.purple
                 .ignoresSafeArea()
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center, spacing: 50) {
                 Color(
-                    red: redComponent,
-                    green: greenComponent,
-                    blue: blueComponent
-                ).padding()
-                ColorSliderView(value: $redComponent, tint: .red)
-                ColorSliderView(value: $greenComponent, tint: .green)
-                ColorSliderView(value: $blueComponent, tint: .blue)
+                    red: redComponent / 255,
+                    green: greenComponent / 255,
+                    blue: blueComponent / 255
+                )
+                .frame(height: 200)
+                ColorSliderView(
+                    value: $redComponent,
+                    text: $redText,
+                    range: valueRange,
+                    tint: .red
+                )
+                ColorSliderView(
+                    value: $greenComponent,
+                    text: $greenText,
+                    range: valueRange,
+                    tint: .green
+                )
+                ColorSliderView(
+                    value: $blueComponent,
+                    text: $blueText,
+                    range: valueRange,
+                    tint: .blue
+                )
             }
             .padding()
         }
@@ -39,14 +61,26 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ColorSliderView: View {
     @Binding var value: Double
+    @Binding var text: String
+    
+    let range: ClosedRange<Double>
     let tint: Color
     
     var body: some View {
         HStack {
-            Text("\(lround(value))")
+            Text("\(text)")
                 .font(.system(size: 20))
-            Slider(value: $value, in: 0...255, step: 1.0)
-                .tint(tint)
+            Slider(
+                value: $value,
+                in: range,
+                step:1,
+                onEditingChanged: { _ in updateValue() }
+            )
+            .tint(tint)
         }
+    }
+    
+    private func updateValue() {
+        text = String(format: "%.0f", value)
     }
 }
