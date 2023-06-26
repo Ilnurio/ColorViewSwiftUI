@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462969B92A49B3FB00381A17 /* ColorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462969B82A49B3FB00381A17 /* ColorSliderView.swift */; };
+		462969BB2A49BC4700381A17 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462969BA2A49BC4700381A17 /* ColorView.swift */; };
+		462969BD2A49BD3300381A17 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462969BC2A49BD3300381A17 /* TextFieldView.swift */; };
 		46B384CA2A377C9600B26329 /* ColorViewSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B384C92A377C9600B26329 /* ColorViewSwiftUIApp.swift */; };
 		46B384CC2A377C9600B26329 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B384CB2A377C9600B26329 /* ContentView.swift */; };
 		46B384CE2A377C9700B26329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B384CD2A377C9700B26329 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462969B82A49B3FB00381A17 /* ColorSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSliderView.swift; sourceTree = "<group>"; };
+		462969BA2A49BC4700381A17 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		462969BC2A49BD3300381A17 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		46B384C62A377C9600B26329 /* ColorViewSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorViewSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B384C92A377C9600B26329 /* ColorViewSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewSwiftUIApp.swift; sourceTree = "<group>"; };
 		46B384CB2A377C9600B26329 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,8 +59,11 @@
 			children = (
 				46B384C92A377C9600B26329 /* ColorViewSwiftUIApp.swift */,
 				46B384CB2A377C9600B26329 /* ContentView.swift */,
+				462969BC2A49BD3300381A17 /* TextFieldView.swift */,
 				46B384CD2A377C9700B26329 /* Assets.xcassets */,
 				46B384CF2A377C9700B26329 /* Preview Content */,
+				462969BA2A49BC4700381A17 /* ColorView.swift */,
+				462969B82A49B3FB00381A17 /* ColorSliderView.swift */,
 			);
 			path = ColorViewSwiftUI;
 			sourceTree = "<group>";
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462969BB2A49BC4700381A17 /* ColorView.swift in Sources */,
+				462969BD2A49BD3300381A17 /* TextFieldView.swift in Sources */,
 				46B384CC2A377C9600B26329 /* ContentView.swift in Sources */,
 				46B384CA2A377C9600B26329 /* ColorViewSwiftUIApp.swift in Sources */,
+				462969B92A49B3FB00381A17 /* ColorSliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
