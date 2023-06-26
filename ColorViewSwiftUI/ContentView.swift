@@ -23,11 +23,27 @@ struct ContentView: View {
                 ColorView(red: red, green: green, blue: blue)
                 
                 VStack {
-                    
+                    ColorSliderView(value: $red, color: .red)
+                    ColorSliderView(value: $green, color: .green)
+                    ColorSliderView(value: $blue, color: .blue)
                 }
-                
+                .frame(height: 150)
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            isInputActive = false
+                        }
+                    }
+                }
+                Spacer()
             }
-            .padding()
+        }
+        .padding()
+        .background(Color("Background"))
+        .onTapGesture {
+            isInputActive = false
         }
     }
 }
